@@ -1,0 +1,43 @@
+# Human Detection and Tracking with Service Time Calculation
+
+This project utilizes computer vision techniques to detect and track humans in a video stream. It calculates the time spent by each detected individual inside a predefined zone and logs the data in a CSV file. The system also calculates the average time spent by each individual and the total average time spent by all detected individuals.
+
+
+## Overview
+
+The goal of this project is to detect and track humans in a video feed and calculate their service time within a specified zone. The system outputs the following information in a CSV file:
+
+- **Track ID**: Unique identifier for each detected individual.
+- **Entry Time**: Time when the individual entered the zone.
+- **Exit Time**: Time when the individual exited the zone.
+- **Time Spent (seconds)**: Duration the individual spent inside the zone.
+- **Individual Avg**: The average time spent by the individual inside the zone.
+- **Total Avg**: The total average time spent by all detected individuals.
+
+## Prerequisites
+
+To run this project, you need the following Python packages:
+
+- `opencv-python` for computer vision tasks.
+- `torch` and `torchvision` for model inference.
+- `csv` and `os` for file handling.
+- `time` for time tracking.
+
+You can install these dependencies using pip:
+
+```bash
+pip install opencv-python torch torchvision
+
+## Setting Up the Zone
+Zones are defined by coordinates in the form of rectangles or any other shape depending on your application. In this example, we define a rectangular zone where humans will be tracked when they enter.
+
+Marking the Zone:
+You can manually define the zone as a rectangle in the frame or use mouse clicks to mark the coordinates.
+
+For simplicity, let's define a zone as a rectangle with (x1, y1) as the top-left corner and (x2, y2) as the bottom-right corner.
+
+
+Steps for Implementing Zone Marking with Mouse Clicks and Key Press
+Track Mouse Events: Allow the user to click on the video frame to mark the rectangle for the zone.
+Draw Rectangle on the Frame: After clicking, draw a rectangle that the user can adjust to set the zone.
+Press "r" to Confirm: After the rectangle is drawn, pressing "r" will set the zone and allow the system to track objects within that zone.
